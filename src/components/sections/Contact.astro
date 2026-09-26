@@ -1,0 +1,16 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import ContactChannels from '../ui/ContactChannels';
+---
+
+<section id="contacto" class="section-anchor bg-mist py-20 md:py-28 dark:bg-dusk">
+  <div class="mx-auto w-full max-w-6xl px-5 md:px-8">
+    <SectionHeading
+      index="07 — Contacto"
+      title="Hablemos"
+      text="Si te interesa mi perfil, tienes un proyecto en mente o buscas a alguien para un puesto como desarrollador, escríbeme. Leo los mensajes y respondo con gusto."
+    />
+
+    <ContactChannels client:load />
+  </div>
+</section>

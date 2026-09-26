@@ -1,0 +1,16 @@
+---
+interface Props {
+  visual: string;
+  featured?: boolean;
+}
+
+const { visual, featured = false } = Astro.props;
+---
+
+<div
+  class:list={['preview relative overflow-hidden', featured ? 'min-h-56 lg:h-full' : 'h-44']}
+  data-visual={visual}
+  aria-hidden="true"
+>
+  <div class="preview-art"></div>
+</div>

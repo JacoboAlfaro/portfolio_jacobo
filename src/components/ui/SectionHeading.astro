@@ -1,0 +1,41 @@
+---
+interface Props {
+  index: string;
+  title: string;
+  text?: string;
+  light?: boolean;
+}
+
+const { index, title, text, light = false } = Astro.props;
+---
+
+<div data-reveal class="max-w-2xl">
+  <p
+    class:list={[
+      'font-mono text-xs font-medium tracking-[0.22em] uppercase',
+      light ? 'text-sky' : 'text-blue',
+    ]}
+  >
+    {index}
+  </p>
+  <h2
+    class:list={[
+      'mt-3 text-3xl font-semibold tracking-tight md:text-4xl',
+      light ? 'text-white' : 'text-navy dark:text-foam',
+    ]}
+  >
+    {title}
+  </h2>
+  {
+    text && (
+      <p
+        class:list={[
+          'mt-4 text-base leading-7 md:text-lg',
+          light ? 'text-white/80' : 'text-ink dark:text-tide',
+        ]}
+      >
+        {text}
+      </p>
+    )
+  }
+</div>

@@ -1,0 +1,34 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import { education } from '../../data/portfolio';
+---
+
+<section id="formacion" class="section-anchor bg-paper py-20 md:py-28 dark:bg-night">
+  <div class="mx-auto w-full max-w-6xl px-5 md:px-8">
+    <SectionHeading
+      index="05 — Estudios"
+      title="Formación académica"
+      text="Ingeniería en curso, con una base técnica y tecnológica previa en programación."
+    />
+
+    <ol class="mt-10 space-y-0 border-l border-sky/50" data-reveal>
+      {
+        education.map((item) => (
+          <li class="relative pb-8 pl-6 last:pb-0">
+            <span
+              class:list={[
+                'absolute top-1.5 -left-1.25 size-2.5 rounded-full',
+                item.current ? 'bg-navy ring-4 ring-mist dark:bg-sky dark:ring-night' : 'bg-sky',
+              ]}
+              aria-hidden="true"
+            />
+            <p class="font-mono text-[11px] tracking-widest text-blue uppercase">{item.status}</p>
+            <h3 class="mt-1 text-lg font-semibold text-navy dark:text-foam">{item.title}</h3>
+            <p class="mt-1 text-sm font-medium text-ink dark:text-tide">{item.place}</p>
+            <p class="mt-2 max-w-2xl text-sm leading-6 text-ink dark:text-tide">{item.detail}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

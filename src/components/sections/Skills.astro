@@ -1,0 +1,35 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import SkillBoard from '../ui/SkillBoard';
+import { skillLevels } from '../../data/portfolio';
+---
+
+<section id="tecnologias" class="section-anchor bg-mist py-20 md:py-28 dark:bg-dusk">
+  <div class="mx-auto w-full max-w-6xl px-5 md:px-8">
+    <SectionHeading
+      index="02 — Stack"
+      title="Tecnologías"
+      text="Tecnologías y herramientas que he utilizado en mis proyectos y que sigo fortaleciendo mientras continúo aprendiendo."
+    />
+
+    <ul class="mt-8 flex flex-wrap gap-4 text-sm text-ink dark:text-tide" data-reveal>
+      {
+        skillLevels.map((level) => (
+          <li class="inline-flex items-center gap-2">
+            <span
+              class:list={[
+                'size-2.5 rounded-full',
+                level.id === 'experiencia' && 'bg-navy dark:bg-foam',
+                level.id === 'proyectos' && 'bg-blue dark:bg-sky'
+              ]}
+              aria-hidden="true"
+            />
+            {level.label}
+          </li>
+        ))
+      }
+    </ul>
+
+    <SkillBoard />
+  </div>
+</section>

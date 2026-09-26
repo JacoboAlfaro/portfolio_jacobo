@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../../assets/Img_Jacobo1.jpeg';
+import { profile, social } from '../../data/portfolio';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+---
+
+<section id="inicio" class="section-anchor relative isolate overflow-hidden bg-navy text-white">
+  <div class="hero-grid pointer-events-none absolute inset-0"></div>
+  <div class="pointer-events-none absolute -right-20 top-24 size-80 rounded-full bg-sky/20 blur-3xl"></div>
+
+  <div class="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-5 pt-28 pb-16 md:px-8 lg:pt-32">
+    <div class="hero-in max-w-3xl">
+      <div class="flex items-center gap-3 sm:gap-4">
+        <Image
+          src={portrait}
+          alt="Jacobo Alfaro Hernández"
+          width={224}
+          height={224}
+          widths={[112, 224]}
+          sizes="112px"
+          loading="eager"
+          class="size-24 shrink-0 rounded-full object-cover object-[center_22%] ring-2 ring-sky/80 sm:size-28"
+        />
+        <div class="min-w-0">
+          <p class="font-mono text-xs font-medium tracking-[0.18em] text-sky uppercase">
+            {profile.location}
+          </p>
+          <h1 class="mt-2 max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
+            {profile.name}
+          </h1>
+        </div>
+      </div>
+      <p class="mt-4 text-xl font-medium text-white/90 sm:text-2xl">
+        {profile.role}
+      </p>
+      <p class="mt-3 max-w-xl text-sm leading-6 text-sky sm:text-base">
+        {profile.kicker}
+      </p>
+      <p class="mt-6 max-w-xl text-base leading-7 text-white/80">
+        {profile.hero}
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href="#proyectos"
+          class="inline-flex min-h-11 items-center justify-center rounded-full bg-surface px-5 text-sm font-semibold text-navy transition hover:-translate-y-0.5 hover:bg-mist"
+        >
+          Ver mis proyectos
+        </a>
+        <a
+          href="#contacto"
+          class="inline-flex min-h-11 items-center justify-center rounded-full border gap-2 border-white/30 px-5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-sky hover:text-sky"
+        >
+          <FaEnvelope size={22} />
+          Contactarme
+        </a>
+        <a
+          href={social.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center justify-center rounded-full border gap-2 border-white/20 px-5 text-sm font-semibold text-white/90 transition hover:-translate-y-0.5 hover:border-white"
+        >
+          <FaGithub size={22} />
+          GitHub
+        </a>
+        <a
+          href={social.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center justify-center rounded-full border gap-2 border-white/20 px-5 text-sm font-semibold text-white/90 transition hover:-translate-y-0.5 hover:border-white"
+        >
+          <FaLinkedin size={22} />
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
