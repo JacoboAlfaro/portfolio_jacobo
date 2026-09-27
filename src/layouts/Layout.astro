@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro'
 
 interface Props {
   title?: string;
@@ -48,11 +49,12 @@ const {
   <body>
     <a
       href="#inicio"
-      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-navy"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-70 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-navy"
     >
       Saltar al contenido
     </a>
     <slot />
+    <Analytics />
     <script>
       const navbar = document.querySelector<HTMLElement>('#navbar');
       const toggle = document.querySelector<HTMLButtonElement>('#menu-toggle');
